@@ -1,0 +1,37 @@
+{
+	"schemaVersion": 1,
+	"id": "unluckyevents",
+	"version": "${version}",
+	"name": "Unlucky Events",
+	"description": "Server-side control over Minecraft's own Halloween: pumpkin-headed zombies and skeletons, plus the old Halloween bat rule. Follows vanilla's dates automatically, or operators can force it on or off.",
+	"authors": [
+		"Lucien",
+		"Claude"
+	],
+	"contact": {
+		"homepage": "https://unlucky.life"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/unluckyevents/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"unlucky.events.UnluckyEvents"
+		],
+		"client": [
+			"unlucky.events.client.UnluckyEventsClient"
+		]
+	},
+	"mixins": [
+		"unluckyevents.mixins.json",
+		{
+			"config": "unluckyevents.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.5",
+		"minecraft": "~26.3",
+		"java": ">=25"
+	}
+}
